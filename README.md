@@ -115,3 +115,53 @@ to this
   })
 
 ```
+## Lets Make Some Queries
+To get some data we need to set some data, so lets change our defaults to actually hold a user. For the user we will hve an `id`, `name` and we need to specify the type to keep graphql happy `__typename`
+
+```javascript
+  defaults: {
+    users: [
+      { "id": "100", "name":"Aaron", "__typename" :"User" },
+      { "id": "101", "name":"Andrea", "__typename" :"User" }
+    ]
+  },
+```
+
+We have data now lets do the query, we are assuming a basic understanding of graphql queries here. So this is how you query all of the users; add this query to the section marked in the file `graphql-info.ts`
+
+```javascript
+export const GET_USERS_QUERY = gql`
+  query getUsers {
+    users  @client {
+      id
+      name
+    }
+  }
+  `;
+  ```
+  Next we are going to use the GraphQL Tools from Apollo so please load that up in your Chrome browser or follow direction to load it based on the browser you are using. We will use these tools to execute queries for testing purposes. [Download tools by clicking this link](https://github.com/apollographql/apollo-client-devtools)
+
+  
+  when you open the tool, be sure to have the "Load From Cache" checked, we are using the cache here.
+
+  next copy the actual query that you just pasted into the file... ONLY the query text.. Also notice the `@client` decorated added to the query, that means check the cache for the query.
+
+  ```javascript
+  query getUsers {
+    users  @client {
+      id
+      name
+    }
+  }
+  ```
+
+![/readme.images/Screen Shot 2018-09-16 at 11.59.08 PM.png](/readme.images/tools-image-1.png)
+
+paste the query into the devtool open in chrome.
+
+Next we are going to run the query and get the list of users from the local state of the application, what we set in the default section when initializing the client.
+
+![/readme.images/Screen Shot 2018-09-16 at 11.59.08 PM.png](/readme.images/tools-image-2.png)
+
+you can see we have the complete list of the users from the client
+
