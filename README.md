@@ -1,6 +1,15 @@
 # ionicv4-graphql-link-state
 Example showing how to manage state using graphql in local state
 
+---
+
+I am updating the documentation right now but you can follow along with each step by clicking on each branch
+
+- [Step One - Getting Started](https://github.com/aaronksaunders/ionicv4-graphql-link-state/tree/step-one)
+- [Step One - Lets Make Some Queries](https://github.com/aaronksaunders/ionicv4-graphql-link-state/tree/step-two)
+- [Completed App](https://github.com/aaronksaunders/ionicv4-graphql-link-state)
+
+---
 
 ## Getting Started
 
