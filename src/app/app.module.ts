@@ -41,7 +41,6 @@ export class AppModule {
   ) {
     const cache = new InMemoryCache();
     apolloBoost.create({
-
       clientState: {
         cache,
         defaults: GRAPH_QL.defaults,
