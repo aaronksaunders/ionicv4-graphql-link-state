@@ -155,13 +155,13 @@ export const GET_USERS_QUERY = gql`
   }
   ```
 
-![/readme.images/Screen Shot 2018-09-16 at 11.59.08 PM.png](/readme.images/tools-image-1.png)
+![/readme.images/Screen Shot 2018-09-16 at 11.59.08 PM.png](https://github.com/aaronksaunders/ionicv4-graphql-link-state/blob/step-two/readme.images/tools-image-1.png)
 
 paste the query into the devtool open in chrome.
 
 Next we are going to run the query and get the list of users from the local state of the application, what we set in the default section when initializing the client.
 
-![/readme.images/Screen Shot 2018-09-16 at 11.59.08 PM.png](/readme.images/tools-image-2.png)
+![/Screen Shot 2018-09-16 at 11.59.08 PM.png](https://github.com/aaronksaunders/ionicv4-graphql-link-state/blob/step-two/readme.images/tools-image-2.png)
 
 you can see we have the complete list of the users from the client
 
