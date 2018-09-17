@@ -75,3 +75,34 @@ export const ADD_USER_QUERY = gql` `;   // add a user to the local state
 
 export const GET_USERS_QUERY = gql``;   // get a list of all users in local state
 ```
+Next lets go back to the app module and connect this new module and import the last peices to get the apollo client connected to the application.
+
+first import the new module `graphql-info`
+
+```javascript
+import GRAPH_QL from "./graphql-info";
+```
+
+then connect the default state and the resolvers to the client by changing this
+```javascript
+  apolloBoost.create({
+    clientState: {
+      cache,
+      defaults: {} ,  // default settings for state
+      resolvers: {}   // the resolvers for the gql queries/mutations
+    }
+  })
+```
+
+to this
+
+```javascript
+  apolloBoost.create({
+    clientState: {
+      cache,
+      defaults: GRAPH_QL.defaults ,   // default settings for state
+      resolvers: GRAPH_QL.resolvers   // the resolvers for the gql queries/mutations
+    }
+  })
+
+```
