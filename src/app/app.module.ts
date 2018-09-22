@@ -10,12 +10,8 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 // GRAPH QL
 import { HttpClientModule } from "@angular/common/http";
-import {
-  ApolloBoostModule,
-  ApolloBoost,
-  InMemoryCache
-} from "apollo-angular-boost";
-import GRAPH_QL from "./graphql-info";
+import { LoonaModule } from "@loona/angular";
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +21,8 @@ import GRAPH_QL from "./graphql-info";
     HttpClientModule, // provides HttpClient for HttpLink
     IonicModule.forRoot(),
     AppRoutingModule,
-    ApolloBoostModule
+    GraphQLModule,
+    LoonaModule.forRoot(),
   ],
   providers: [
     StatusBar,
@@ -34,20 +31,5 @@ import GRAPH_QL from "./graphql-info";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-  constructor(
-    apolloBoost: ApolloBoost
-  ) {
-    const cache = new InMemoryCache();
-    apolloBoost.create({
-
-      clientState: {
-        cache,
-        defaults: GRAPH_QL.defaults,
-        resolvers: GRAPH_QL.resolvers
-      }
-    })
-  }
-}
+export class AppModule {}
 
